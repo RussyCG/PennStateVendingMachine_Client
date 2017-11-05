@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientControllers", "Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConnection", "ClientConnection\ClientConnection.csproj", "{EAE313FF-5E6E-4963-9748-81D4A060E021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineModels", "..\..\PennStateVendingMachine\PennStateVendingMachine\VendingMachineModels\VendingMachineModels.csproj", "{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineModels", "VendingMachineModels\VendingMachineModels.csproj", "{2E8CD901-7197-40D2-A93F-94D922E09E22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{EAE313FF-5E6E-4963-9748-81D4A060E021}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAE313FF-5E6E-4963-9748-81D4A060E021}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAE313FF-5E6E-4963-9748-81D4A060E021}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +47,6 @@ Global
 		{E4CE1848-2B24-4D7E-95EA-956098D2C3B7} = {8B7B9D71-D34E-4F73-A7C1-AC52019A2763}
 		{D1DE274F-B6A0-4C41-8916-43B1CEA6CD38} = {38B63535-A4C2-4074-B215-06A9CE68D995}
 		{EAE313FF-5E6E-4963-9748-81D4A060E021} = {38B63535-A4C2-4074-B215-06A9CE68D995}
-		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E} = {38B63535-A4C2-4074-B215-06A9CE68D995}
+		{2E8CD901-7197-40D2-A93F-94D922E09E22} = {38B63535-A4C2-4074-B215-06A9CE68D995}
 	EndGlobalSection
 EndGlobal
