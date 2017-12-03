@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace PennStateVendingMachine_Client
 {
     static class Program
@@ -16,7 +15,23 @@ namespace PennStateVendingMachine_Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            try
+            {
+                if (ClientControllers.StartUpController.ISfirstStartup()==true)
+                {
+                    Application.Run(new RegisterPage());
+                }
+                else
+                {
+                    Application.Run(new HomePage());
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error message: "+e.Message+"\nPlease Call Tech Support", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+            Application.Run(new HomePage());
         }
     }
 }

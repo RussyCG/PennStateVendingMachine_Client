@@ -54,6 +54,7 @@
     <Compile Include="DTOs\ProductTypeDTO.cs" />
     <Compile Include="DTOs\ProfileDTO.cs" />
     <Compile Include="DTOs\ProvinceDTO.cs" />
+    <Compile Include="DTOs\PurchaseSTO.cs" />
     <Compile Include="DTOs\RoleDTO.cs" />
     <Compile Include="DTOs\SessionDTO.cs" />
     <Compile Include="DTOs\SuburbDTO.cs" />

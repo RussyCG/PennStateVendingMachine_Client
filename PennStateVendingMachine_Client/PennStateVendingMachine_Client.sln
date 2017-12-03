@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConnection", "ClientC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineModels", "VendingMachineModels\VendingMachineModels.csproj", "{2E8CD901-7197-40D2-A93F-94D922E09E22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{746CD02D-232A-4D78-BEC1-2C7E18D2DE73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E8CD901-7197-40D2-A93F-94D922E09E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{746CD02D-232A-4D78-BEC1-2C7E18D2DE73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746CD02D-232A-4D78-BEC1-2C7E18D2DE73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746CD02D-232A-4D78-BEC1-2C7E18D2DE73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746CD02D-232A-4D78-BEC1-2C7E18D2DE73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{D1DE274F-B6A0-4C41-8916-43B1CEA6CD38} = {38B63535-A4C2-4074-B215-06A9CE68D995}
 		{EAE313FF-5E6E-4963-9748-81D4A060E021} = {38B63535-A4C2-4074-B215-06A9CE68D995}
 		{2E8CD901-7197-40D2-A93F-94D922E09E22} = {38B63535-A4C2-4074-B215-06A9CE68D995}
+		{746CD02D-232A-4D78-BEC1-2C7E18D2DE73} = {75C7CEBA-31A5-4727-AEF8-9F8D913B108B}
 	EndGlobalSection
 EndGlobal
