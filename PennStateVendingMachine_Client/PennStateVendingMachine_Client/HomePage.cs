@@ -15,15 +15,10 @@ namespace PennStateVendingMachine_Client
     {
         DateTime currentDate;
         string selectedItem = "";
-        int vendingID = 1;
+        string vendingID = "";
         public HomePage()
         {
             InitializeComponent();
-        }
-
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -34,6 +29,8 @@ namespace PennStateVendingMachine_Client
             tmrDataUpdate.Enabled = true;
             tmrDataUpdate.Start();
             ClientConnection.Scheduler.startScheduler();
+            string ID2 = ClientControllers.StartUpController.getID();
+            vendingID = ID2;
         }
 
         private void tmrDataUpdate_Tick(object sender, EventArgs e)
@@ -104,11 +101,11 @@ namespace PennStateVendingMachine_Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error message: "+ex.Message+"\nPlease contact technical department", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error message: \n" + ex.Message + "\n\nPlease contact technical department", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             AutoClosingMessageBox.Show("Thank you for your purchase", "Success", 3000);
-            lblTotal.Text = "R 0.00";
+            lblTotal.Text = "0,00";
             selectedItem = "";
         }
 

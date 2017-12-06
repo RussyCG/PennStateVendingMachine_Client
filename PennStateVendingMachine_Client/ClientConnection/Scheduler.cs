@@ -13,6 +13,7 @@ namespace ClientConnection
         private static Thread runSync = new Thread(new ThreadStart(syncPurchases));
         public static void startScheduler()
         {
+            runSync.IsBackground = true;
             runSync.Start();
         }
         private static void syncPurchases()

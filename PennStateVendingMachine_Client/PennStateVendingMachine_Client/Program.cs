@@ -31,7 +31,8 @@ namespace PennStateVendingMachine_Client
                 MessageBox.Show("Error message: "+e.Message+"\nPlease Call Tech Support", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
-            Application.Run(new HomePage());
+            //string ID = ClientControllers.StartUpController.getID();
+            //Application.Run(new HomePage(ID));
         }
     }
 }

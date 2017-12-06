@@ -45,5 +45,24 @@ namespace ClientConnection
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
             return responseString;
         }
+        public string getCodes(string postData)
+        {
+            var request = (HttpWebRequest)WebRequest.Create("http://api.solmon.belgiumcampus.ac.za/vendingmachinestatistics");
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            return responseString;
+        }
     }
 }

@@ -238,7 +238,7 @@
             this.lblR2I4Price.Name = "lblR2I4Price";
             this.lblR2I4Price.Size = new System.Drawing.Size(49, 24);
             this.lblR2I4Price.TabIndex = 3;
-            this.lblR2I4Price.Text = "9.50";
+            this.lblR2I4Price.Text = "9,50";
             // 
             // pnlHeader
             // 
@@ -297,7 +297,7 @@
             this.lblR1I4Price.Name = "lblR1I4Price";
             this.lblR1I4Price.Size = new System.Drawing.Size(49, 24);
             this.lblR1I4Price.TabIndex = 3;
-            this.lblR1I4Price.Text = "9.50";
+            this.lblR1I4Price.Text = "9,50";
             // 
             // pnlR2I3
             // 
@@ -320,7 +320,7 @@
             this.lblR2I3Price.Name = "lblR2I3Price";
             this.lblR2I3Price.Size = new System.Drawing.Size(49, 24);
             this.lblR2I3Price.TabIndex = 3;
-            this.lblR2I3Price.Text = "9.50";
+            this.lblR2I3Price.Text = "9,50";
             // 
             // pnlR1I3
             // 
@@ -343,7 +343,7 @@
             this.lblR1I3Price.Name = "lblR1I3Price";
             this.lblR1I3Price.Size = new System.Drawing.Size(60, 24);
             this.lblR1I3Price.TabIndex = 3;
-            this.lblR1I3Price.Text = "10.50";
+            this.lblR1I3Price.Text = "10,50";
             // 
             // pnlR2I2
             // 
@@ -366,7 +366,7 @@
             this.lblR2I2Price.Name = "lblR2I2Price";
             this.lblR2I2Price.Size = new System.Drawing.Size(60, 24);
             this.lblR2I2Price.TabIndex = 3;
-            this.lblR2I2Price.Text = "10.00";
+            this.lblR2I2Price.Text = "10,00";
             // 
             // pnlR2I1
             // 
@@ -389,7 +389,7 @@
             this.lblR2I1Price.Name = "lblR2I1Price";
             this.lblR2I1Price.Size = new System.Drawing.Size(60, 24);
             this.lblR2I1Price.TabIndex = 3;
-            this.lblR2I1Price.Text = "10.00";
+            this.lblR2I1Price.Text = "10,00";
             // 
             // pnlR1I2
             // 
@@ -412,7 +412,7 @@
             this.lblR1I2Price.Name = "lblR1I2Price";
             this.lblR1I2Price.Size = new System.Drawing.Size(60, 24);
             this.lblR1I2Price.TabIndex = 3;
-            this.lblR1I2Price.Text = "10.00";
+            this.lblR1I2Price.Text = "10,00";
             // 
             // pnlR1I1
             // 
@@ -435,7 +435,7 @@
             this.lblR1I1Price.Name = "lblR1I1Price";
             this.lblR1I1Price.Size = new System.Drawing.Size(60, 24);
             this.lblR1I1Price.TabIndex = 1;
-            this.lblR1I1Price.Text = "10.50";
+            this.lblR1I1Price.Text = "10,50";
             // 
             // tmrDataUpdate
             // 
@@ -505,7 +505,7 @@
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(146, 70);
             this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "0.00";
+            this.lblTotal.Text = "0,00";
             // 
             // panel8
             // 

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{746cd02d-232a-4d78-bec1-2c7e18d2de73}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VendingMachineModels\VendingMachineModels.csproj">
+      <Project>{2e8cd901-7197-40d2-a93f-94d922e09e22}</Project>
+      <Name>VendingMachineModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

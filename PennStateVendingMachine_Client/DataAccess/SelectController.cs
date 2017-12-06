@@ -15,8 +15,10 @@ namespace DataAccess
         private static string password = "";
         private static string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
         private static MySqlConnection connection = new MySqlConnection(connectionString);
-
-
+        public SelectController()
+        {
+            MySqlConnection.ClearAllPools();
+        }
         public static List<string> getCountries()
         {
             List<String> data = new List<string>();
@@ -137,21 +139,29 @@ namespace DataAccess
         {
             try
             {
-                connection.Open();
+                if (connection.State.ToString()!="Open")
+                {
+                    connection.Open();
+                }
                 string query = "SELECT * FROM  `tblproduct` WHERE  `ProductName` =  '"+productName+"'";
                 if (connection.State.ToString() == "Open")
                 {
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                    while (dataReader.Read())
+                    int result = 0;
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        return Convert.ToInt16(dataReader["ProductTypeID"].ToString());
+                        using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                result = Convert.ToInt16(dataReader["ID"].ToString());
+                            }
+
+                            dataReader.Close();
+                        }
                     }
-
-                    dataReader.Close();
-
                     connection.Close();
+                    MySqlConnection.ClearAllPools();
+                    return result;
                 }
             }
             catch (Exception)

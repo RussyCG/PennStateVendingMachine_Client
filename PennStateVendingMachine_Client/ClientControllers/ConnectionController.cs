@@ -9,9 +9,9 @@ namespace ClientControllers
 {
     public class ConnectionController
     {
-        public static string TestConnection(string dataToSend)
+        public static string getCodes(string dataToSend)
         {
-            return new ConnectionManager().write(dataToSend);
+            return new ConnectionManager().getCodes(dataToSend);
         }
     }
 }

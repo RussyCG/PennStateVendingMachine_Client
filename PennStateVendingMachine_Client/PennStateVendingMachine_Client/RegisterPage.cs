@@ -31,18 +31,55 @@ namespace PennStateVendingMachine_Client
             tmrDataUpdate.Interval = 1000;
             tmrDataUpdate.Enabled = true;
             tmrDataUpdate.Start();
-            cmbCountry.DataSource = ClientControllers.CountryController.getCountries();
-            cmbProvince.DataSource = ClientControllers.ProvinceController.getProvinces();
-            cmbCity.DataSource = ClientControllers.CityController.getCities();
-            cmbSuburb.DataSource = ClientControllers.SuburbController.getSuburbs();
+        }
+        
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
 
-        private void txtPostalCode_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string key = txtKey.Text.Trim();
+
+            if (key=="")
+            {
+                lblRequired.Visible = true;
+                return;
+            }
+
+            if (ClientControllers.StartUpController.validateCode(key)==false)
+            {
+                MessageBox.Show("This code is not valid", "INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtKey.Text = "";
+                return;
+            }
+            else
+            {
+                AutoClosingMessageBox.Show("Thank you for registering your unit.", "WELCOME USER", 3000);
+                ClientControllers.StartUpController.createStartUpIndex(key);
+                string ID = ClientControllers.StartUpController.getID();
+                //Application.Run(new HomePage(ID));
+                //this.Close();
+                HomePage hp = new HomePage();
+                hp.FormClosing += delegate { this.Close(); };
+                hp.Show();
+                this.Hide();
+            }
+
+        }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
         (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+            if (e.Handled==false)
+            {
+                lblRequired.Visible = false;
             }
         }
     }
