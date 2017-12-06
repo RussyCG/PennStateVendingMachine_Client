@@ -15,6 +15,7 @@ namespace DataAccess
         private static string password = "";
         private static string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
         private static MySqlConnection connection = new MySqlConnection(connectionString);
+        private static MySqlConnection schedulerConn = new MySqlConnection(connectionString);
         public SelectController()
         {
             MySqlConnection.ClearAllPools();
@@ -149,7 +150,7 @@ namespace DataAccess
                     int result = 0;
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                        using (var dataReader = cmd.ExecuteReader())
                         {
                             while (dataReader.Read())
                             {
@@ -166,7 +167,6 @@ namespace DataAccess
             }
             catch (Exception)
             {
-
                 throw;
             }
             return 0;
@@ -176,28 +176,29 @@ namespace DataAccess
             List<VendingMachineModels.DTOs.PurchaseDTO> data = new List<VendingMachineModels.DTOs.PurchaseDTO>();
             try
             {
-                connection.Open();
+                schedulerConn.Open();
                 string query = "SELECT * FROM tblpurchase";
-                if (connection.State.ToString() == "Open")
+                if (schedulerConn.State.ToString() == "Open")
                 {
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                    while (dataReader.Read())
+                    using (MySqlCommand cmd = new MySqlCommand(query, schedulerConn))
                     {
-                        VendingMachineModels.DTOs.PurchaseDTO val = new VendingMachineModels.DTOs.PurchaseDTO();
-                        val.PurchaseID = Convert.ToInt16(dataReader["ID"].ToString());
-                        val.ProductID = Convert.ToInt16(dataReader["ProductID"].ToString());
-                        val.Cost = Convert.ToDouble(dataReader["Cost"].ToString());
-                        val.Quantity = Convert.ToInt16(dataReader["Quantity"].ToString()); 
-                        val.Date = Convert.ToDateTime(dataReader["PurchaseDateTime"].ToString());
-                        val.VendingMachineID = Convert.ToInt16(dataReader["VendingMachineID"].ToString());
-                        data.Add(val);
+                        using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                VendingMachineModels.DTOs.PurchaseDTO val = new VendingMachineModels.DTOs.PurchaseDTO();
+                                val.PurchaseID = Convert.ToInt16(dataReader["ID"].ToString());
+                                val.ProductID = Convert.ToInt16(dataReader["ProductID"].ToString());
+                                val.Cost = Convert.ToDouble(dataReader["Cost"].ToString());
+                                val.Quantity = Convert.ToInt16(dataReader["Quantity"].ToString());
+                                val.Date = Convert.ToDateTime(dataReader["PurchaseDateTime"].ToString());
+                                val.VendingMachineID = Convert.ToInt16(dataReader["VendingMachineID"].ToString());
+                                data.Add(val);
+                                dataReader.Close();
+                            }
+                        }
                     }
-
-                    dataReader.Close();
-
-                    connection.Close();
+                    schedulerConn.Close();
                 }
             }
             catch (Exception)

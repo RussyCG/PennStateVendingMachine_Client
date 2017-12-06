@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Web.Script.Serialization;
+using System.Windows.Forms;
 
 namespace ClientConnection
 {
     public class Scheduler
     {
-        private static Thread runSync = new Thread(new ThreadStart(syncPurchases));
         public static void startScheduler()
         {
-            runSync.IsBackground = true;
+            Thread runSync = new Thread(syncPurchases);
             runSync.Start();
         }
         private static void syncPurchases()
@@ -25,7 +25,7 @@ namespace ClientConnection
                     List<VendingMachineModels.DTOs.PurchaseDTO> data = DataAccess.SelectController.getSales();
                     string json = new JavaScriptSerializer().Serialize(data);
                     string result = writeData(json);
-                    Thread.Sleep(600000);
+                    Thread.Sleep(30000);
                 }
             }
             catch (Exception)

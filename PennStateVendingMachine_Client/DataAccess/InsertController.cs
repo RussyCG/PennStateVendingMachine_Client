@@ -25,7 +25,8 @@ namespace DataAccess
             try
             {
                 connection.Open();
-                string q1 = string.Format("INSERT INTO `vendingmachine`.`tblpurchase` (`ID`, `VendingMachineID`, `ProductID`, `Cost`, `Quantity`, `PurchaseDateTime`) VALUES(NULL, '{0}', '{1}', '{2}', '{3}', '{4}');",vendingMachineID,ProductID,cost,quantity,date.ToLongDateString());
+                string time = date.ToShortDateString() + " " + date.ToLongTimeString();
+                string q1 = string.Format("INSERT INTO `vendingmachine`.`tblpurchase` (`ID`, `VendingMachineID`, `ProductID`, `Cost`, `Quantity`, `PurchaseDateTime`) VALUES(NULL, '{0}', '{1}', '{2}', '{3}', '{4}');",vendingMachineID,ProductID,cost,quantity,time);
                 if (connection.State.ToString() == "Open")
                 {
                     using (MySqlCommand cmd = new MySqlCommand(q1, connection))
