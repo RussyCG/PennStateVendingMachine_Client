@@ -187,12 +187,12 @@ namespace DataAccess
                             while (dataReader.Read())
                             {
                                 VendingMachineModels.DTOs.PurchaseDTO val = new VendingMachineModels.DTOs.PurchaseDTO();
-                                val.PurchaseID = Convert.ToInt16(dataReader["ID"].ToString());
-                                val.ProductID = Convert.ToInt16(dataReader["ProductID"].ToString());
+                                val.ID = Convert.ToInt16(dataReader["ID"].ToString());
+                                val.Product.ID = Convert.ToInt16(dataReader["ProductID"].ToString());
                                 val.Cost = Convert.ToDouble(dataReader["Cost"].ToString());
                                 val.Quantity = Convert.ToInt16(dataReader["Quantity"].ToString());
-                                val.Date = Convert.ToDateTime(dataReader["PurchaseDateTime"].ToString());
-                                val.VendingMachineID = Convert.ToInt16(dataReader["VendingMachineID"].ToString());
+                                val.DateTimePurchased = Convert.ToDateTime(dataReader["PurchaseDateTime"].ToString());
+                                val.VendingMachine.ID = Convert.ToInt16(dataReader["VendingMachineID"].ToString());
                                 data.Add(val);
                                 dataReader.Close();
                             }

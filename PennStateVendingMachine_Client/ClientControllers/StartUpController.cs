@@ -45,7 +45,7 @@ namespace ClientControllers
                 List<VendingMachineModels.DTOs.PurchaseDTO> data = new JavaScriptSerializer().Deserialize<List<VendingMachineModels.DTOs.PurchaseDTO>>(result);
                 foreach (VendingMachineModels.DTOs.PurchaseDTO item in data)
                 {
-                    if (item.VendingMachineID.ToString()==code)
+                    if (item.VendingMachine.ID.ToString()==code)
                     {
                         return true;
                     }

@@ -74,8 +74,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VendingMachineModels\VendingMachineModels.csproj">
-      <Project>{2e8cd901-7197-40d2-a93f-94d922e09e22}</Project>
+    <ProjectReference Include="..\..\..\PennStateVendingMachine\PennStateVendingMachine\VendingMachineModels\VendingMachineModels.csproj">
+      <Project>{98bfa32f-5f42-4f72-aaee-40b3a9be2b3e}</Project>
       <Name>VendingMachineModels</Name>
     </ProjectReference>
   </ItemGroup>
