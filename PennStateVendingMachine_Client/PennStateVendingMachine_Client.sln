@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineModels", "..\..\PennStateVendingMachine\PennStateVendingMachine\VendingMachineModels\VendingMachineModels.csproj", "{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPIO_RGM", "GPIO_RGM\GPIO_RGM\GPIO_RGM.csproj", "{DB7AE535-F931-4100-A934-00EECEFC9199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB7AE535-F931-4100-A934-00EECEFC9199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB7AE535-F931-4100-A934-00EECEFC9199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB7AE535-F931-4100-A934-00EECEFC9199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB7AE535-F931-4100-A934-00EECEFC9199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{EAE313FF-5E6E-4963-9748-81D4A060E021} = {38B63535-A4C2-4074-B215-06A9CE68D995}
 		{746CD02D-232A-4D78-BEC1-2C7E18D2DE73} = {75C7CEBA-31A5-4727-AEF8-9F8D913B108B}
 		{98BFA32F-5F42-4F72-AAEE-40B3A9BE2B3E} = {38B63535-A4C2-4074-B215-06A9CE68D995}
+		{DB7AE535-F931-4100-A934-00EECEFC9199} = {75C7CEBA-31A5-4727-AEF8-9F8D913B108B}
 	EndGlobalSection
 EndGlobal

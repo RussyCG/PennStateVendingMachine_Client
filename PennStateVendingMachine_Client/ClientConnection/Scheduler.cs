@@ -28,9 +28,9 @@ namespace ClientConnection
                     Thread.Sleep(30000);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message, "SCHEDULER ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
         }

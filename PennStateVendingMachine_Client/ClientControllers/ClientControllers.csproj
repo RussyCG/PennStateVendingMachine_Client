@@ -64,6 +64,10 @@
       <Project>{746cd02d-232a-4d78-bec1-2c7e18d2de73}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GPIO_RGM\GPIO_RGM\GPIO_RGM.csproj">
+      <Project>{db7ae535-f931-4100-a934-00eecefc9199}</Project>
+      <Name>GPIO_RGM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

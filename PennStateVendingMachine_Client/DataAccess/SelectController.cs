@@ -192,6 +192,7 @@ namespace DataAccess
                                 val.Cost = Convert.ToDouble(dataReader["Cost"].ToString());
                                 val.Quantity = Convert.ToInt16(dataReader["Quantity"].ToString());
                                 val.DateTimePurchased = DateTime.Now;
+                                System.Threading.Thread.Sleep(50);
                                 val.VendingMachine = new VendingMachineModels.VendingMachineDTO(Convert.ToInt16(dataReader["VendingMachineID"].ToString()), null, null, null);
                                 data.Add(val);
                             }

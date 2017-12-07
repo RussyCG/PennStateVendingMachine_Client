@@ -12,7 +12,9 @@ namespace ClientControllers
         {
             DataAccess.ConnectionManager.killConnections();
             int productID = DataAccess.SelectController.getProductIDbyName(itemName);
+            int columnID = productID > 3 ? 3 : productID;
             DataAccess.InsertController.itemPurchased(vendingID,productID,Convert.ToDouble(itemPrice),1,DateTime.Now);
+            GPIO_RGM.GPIO.dispenseItem(columnID);
         }
     }
 }

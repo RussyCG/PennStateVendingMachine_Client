@@ -28,7 +28,7 @@ namespace PennStateVendingMachine_Client
             tmrDataUpdate.Interval = 1000;
             tmrDataUpdate.Enabled = true;
             tmrDataUpdate.Start();
-            ClientConnection.Scheduler.startScheduler();
+            //ClientConnection.Scheduler.startScheduler();
             string ID2 = ClientControllers.StartUpController.getID();
             vendingID = ID2;
         }
@@ -99,11 +99,17 @@ namespace PennStateVendingMachine_Client
             {
                 ClientControllers.SalesController.itemPurchased(vendingID, selectedItem, lblTotal.Text);
             }
+            catch (TypeInitializationException t)
+            {
+                MessageBox.Show("Error message: \n" + t.InnerException.Message + "\n\nPlease contact technical department", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error message: \n" + ex.Message + "\n\nPlease contact technical department", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            
             AutoClosingMessageBox.Show("Thank you for your purchase", "Success", 1000);
             lblTotal.Text = "0,00";
             selectedItem = "";
