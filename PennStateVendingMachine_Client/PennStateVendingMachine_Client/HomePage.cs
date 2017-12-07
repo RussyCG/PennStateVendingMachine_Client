@@ -13,6 +13,7 @@ namespace PennStateVendingMachine_Client
 {
     public partial class HomePage : Form
     {
+        //GPIO_RGM.ReadMoney readMoney = new GPIO_RGM.ReadMoney();
         DateTime currentDate;
         string selectedItem = "";
         string vendingID = "";
@@ -113,6 +114,10 @@ namespace PennStateVendingMachine_Client
             AutoClosingMessageBox.Show("Thank you for your purchase", "Success", 1000);
             lblTotal.Text = "0,00";
             selectedItem = "";
+        }
+        public void onMoneyInserted(double amount, EventArgs e)
+        {
+            lblTotal.Text = "0,00";
         }
 
 

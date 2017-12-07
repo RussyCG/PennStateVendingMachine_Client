@@ -98,6 +98,10 @@
       <Project>{d1de274f-b6a0-4c41-8916-43b1cea6cd38}</Project>
       <Name>ClientControllers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GPIO_RGM\GPIO_RGM\GPIO_RGM.csproj">
+      <Project>{db7ae535-f931-4100-a934-00eecefc9199}</Project>
+      <Name>GPIO_RGM</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cream soda1.jpg" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace GPIO_RGM
 {
     public class GPIO
     {
+        
         private static int[] colIDs = { 1, 2, 3 };
 
         private static GPIOController.Pin[] vendPins = {
@@ -33,6 +35,19 @@ namespace GPIO_RGM
         private static ReadEmpty emptyMonitor = new ReadEmpty(emptyPins, colIDs);
         private static ReadMoney moneyMonitor = new ReadMoney(moneyPins, moneyIDs, returnPin);
 
+        Thread readers = new Thread(new ThreadStart(startReading));
+        public static void startReading()
+        {
+            while (true)
+            {
+                moneyMonitor.ReadOnce();
+                emptyMonitor.ReadOnce();
+            }
+        }
+        public GPIO()
+        {
+            readers.Start();
+        }
         // Testing!
         public static void dispenseItem(int itemID)
         {

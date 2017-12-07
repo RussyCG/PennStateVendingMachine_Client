@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GPIO_RGM
 {
     class ReadMoney : GPIO_Read<double>
     {
+
+        public delegate void moneyInsertedEventHandler(object source, EventArgs e);
+        public event moneyInsertedEventHandler moneyInserted;
         /// <summary>
         /// Index of return pin in the pin array
         /// </summary>
@@ -70,6 +74,7 @@ namespace GPIO_RGM
                     pins[i].state == GPIOController.State.High)
                 {
                     // TODO: Raise money input event
+                    //onMoneyInserted();
                     // @param amount: this.pins[i].id
                 }
 
@@ -87,6 +92,13 @@ namespace GPIO_RGM
                 pins[returnIndex].state == GPIOController.State.High)
             {
                 // TODO: raise change return event, no params
+            }
+        }
+        public virtual void onMoneyInserted()
+        {
+            if (moneyInserted != null)
+            {
+                moneyInserted(this,EventArgs.Empty);
             }
         }
 
