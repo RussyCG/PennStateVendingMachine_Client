@@ -104,7 +104,7 @@ namespace PennStateVendingMachine_Client
                 MessageBox.Show("Error message: \n" + ex.Message + "\n\nPlease contact technical department", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            AutoClosingMessageBox.Show("Thank you for your purchase", "Success", 3000);
+            AutoClosingMessageBox.Show("Thank you for your purchase", "Success", 1000);
             lblTotal.Text = "0,00";
             selectedItem = "";
         }

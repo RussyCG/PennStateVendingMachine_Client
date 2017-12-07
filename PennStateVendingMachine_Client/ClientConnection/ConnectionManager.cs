@@ -28,7 +28,7 @@ namespace ClientConnection
         //}
         public string write(string postData)
         {
-            var request = (HttpWebRequest)WebRequest.Create("http://api.solmon.belgiumcampus.ac.za/vendingmachinestatistics");
+            var request = (HttpWebRequest)WebRequest.Create("http://api.solmon.belgiumcampus.ac.za/purchase/AddNewPurchase");
             var data = Encoding.ASCII.GetBytes(postData);
 
             request.Method = "POST";

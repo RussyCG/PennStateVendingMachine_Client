@@ -13,7 +13,7 @@ namespace ClientConnection
     {
         public static void startScheduler()
         {
-            Thread runSync = new Thread(syncPurchases);
+            Thread runSync = new Thread(new ThreadStart(syncPurchases));
             runSync.Start();
         }
         private static void syncPurchases()
@@ -22,7 +22,7 @@ namespace ClientConnection
             {
                 while (true)
                 {
-                    List<VendingMachineModels.DTOs.PurchaseDTO> data = DataAccess.SelectController.getSales();
+                    List<VendingMachineModels.VendingMachinePurchaseDTO> data = DataAccess.SelectController.getSales();
                     string json = new JavaScriptSerializer().Serialize(data);
                     string result = writeData(json);
                     Thread.Sleep(30000);
@@ -30,7 +30,7 @@ namespace ClientConnection
             }
             catch (Exception)
             {
-                return;
+                throw;
             }
            
         }

@@ -171,9 +171,9 @@ namespace DataAccess
             }
             return 0;
         }
-        public static List<VendingMachineModels.DTOs.PurchaseDTO> getSales()
+        public static List<VendingMachineModels.VendingMachinePurchaseDTO> getSales()
         {
-            List<VendingMachineModels.DTOs.PurchaseDTO> data = new List<VendingMachineModels.DTOs.PurchaseDTO>();
+            List<VendingMachineModels.VendingMachinePurchaseDTO> data = new List<VendingMachineModels.VendingMachinePurchaseDTO>();
             try
             {
                 schedulerConn.Open();
@@ -186,16 +186,17 @@ namespace DataAccess
                         {
                             while (dataReader.Read())
                             {
-                                VendingMachineModels.DTOs.PurchaseDTO val = new VendingMachineModels.DTOs.PurchaseDTO();
+                                VendingMachineModels.VendingMachinePurchaseDTO val = new VendingMachineModels.VendingMachinePurchaseDTO();
                                 val.ID = Convert.ToInt16(dataReader["ID"].ToString());
-                                val.Product.ID = Convert.ToInt16(dataReader["ProductID"].ToString());
+                                val.Product = new VendingMachineModels.ProductDTO(Convert.ToInt16(dataReader["ProductID"].ToString()), null, null);
                                 val.Cost = Convert.ToDouble(dataReader["Cost"].ToString());
                                 val.Quantity = Convert.ToInt16(dataReader["Quantity"].ToString());
-                                val.DateTimePurchased = Convert.ToDateTime(dataReader["PurchaseDateTime"].ToString());
-                                val.VendingMachine.ID = Convert.ToInt16(dataReader["VendingMachineID"].ToString());
+                                val.DateTimePurchased = DateTime.Now;
+                                val.VendingMachine = new VendingMachineModels.VendingMachineDTO(Convert.ToInt16(dataReader["VendingMachineID"].ToString()), null, null, null);
                                 data.Add(val);
-                                dataReader.Close();
                             }
+
+                            dataReader.Close();
                         }
                     }
                     schedulerConn.Close();
@@ -208,5 +209,40 @@ namespace DataAccess
             }
             return data;
         }
+        //public static VendingMachineModels.VendingMachineDTO getVendingMachineByID(int ID)
+        //{
+        //    try
+        //    {
+        //        if (connection.State.ToString() != "Open")
+        //        {
+        //            connection.Open();
+        //        }
+        //        string query = "SELECT * FROM  `tblvendingmachine` WHERE  `ID` = "+ID;
+        //        VendingMachineModels.VendingMachineDTO result = new VendingMachineModels.VendingMachineDTO();
+        //        if (connection.State.ToString() == "Open")
+        //        {
+        //            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+        //            {
+        //                using (var dataReader = cmd.ExecuteReader())
+        //                {
+        //                    while (dataReader.Read())
+        //                    {
+        //                        result = Convert.ToInt16(dataReader["ID"].ToString());
+        //                    }
+
+        //                    dataReader.Close();
+        //                }
+        //            }
+        //            connection.Close();
+        //            MySqlConnection.ClearAllPools();
+        //            return result;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return 0;
+        //}
     }
 }

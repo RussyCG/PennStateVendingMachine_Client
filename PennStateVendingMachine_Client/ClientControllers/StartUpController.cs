@@ -42,10 +42,10 @@ namespace ClientControllers
             try
             {
                 string result = ConnectionController.getCodes(code);
-                List<VendingMachineModels.DTOs.PurchaseDTO> data = new JavaScriptSerializer().Deserialize<List<VendingMachineModels.DTOs.PurchaseDTO>>(result);
-                foreach (VendingMachineModels.DTOs.PurchaseDTO item in data)
+                List<VendingMachineModels.VendingMachineDTO> data = new JavaScriptSerializer().Deserialize<List<VendingMachineModels.VendingMachineDTO>>(result);
+                foreach (VendingMachineModels.VendingMachineDTO item in data)
                 {
-                    if (item.VendingMachine.ID.ToString()==code)
+                    if (item.ID.ToString()==code)
                     {
                         return true;
                     }

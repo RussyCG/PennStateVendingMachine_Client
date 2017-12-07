@@ -25,7 +25,8 @@ namespace DataAccess
             try
             {
                 connection.Open();
-                string time = date.ToShortDateString() + " " + date.ToLongTimeString();
+                //string time = date.ToShortDateString() + " " + date.ToLongTimeString();
+                string time = date.ToString("yyyy-MM-dd HH:mm:ss");
                 string q1 = string.Format("INSERT INTO `vendingmachine`.`tblpurchase` (`ID`, `VendingMachineID`, `ProductID`, `Cost`, `Quantity`, `PurchaseDateTime`) VALUES(NULL, '{0}', '{1}', '{2}', '{3}', '{4}');",vendingMachineID,ProductID,cost,quantity,time);
                 if (connection.State.ToString() == "Open")
                 {
